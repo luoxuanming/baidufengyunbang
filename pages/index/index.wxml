@@ -1,0 +1,28 @@
+<view class="nav">
+	<text class="{{item.boardid==bid?'item-nav active':'item-nav'}}" 
+		wx:for="{{nav}}" wx:key="{{index}}" data-bid="{{item.boardid}}" bindtap="navtapFn">{{item.boardname}}</text>
+</view>
+
+<view class="list">
+	<view class="item-list" wx:for="{{list}}" wx:key="{{index}}" bindtap="tapwordFn" data-keyword="{{item.keyword}}">
+		<view class="title">
+			<text class="{{index==0?'index first':'index'}}" data-index="{{index+1}}" wx:if="{{index==0}}">{{index+1}}</text>
+			<text class="{{index==1?'index second':'index'}}" data-index="{{index+1}}" wx:if="{{index==1}}">{{index+1}}</text>
+			<text class="{{index==2?'index third':'index'}}" data-index="{{index+1}}" wx:if="{{index==2}}">{{index+1}}</text>
+			<text class="{{index>2?'index':''}}" wx:if="{{index>2}}">{{index+1}}</text>
+			
+			
+			<text class="title_text">{{item.keyword}}</text>
+			<text class="new" wx:if="{{item.isNew}}">新{{aa()}}</text>
+			<view class="count">
+				<image  data-trend="{{item.trend}}" src="/images/icon/{{item.trend=='rise'?'up.png':'fall.png'}}"></image>
+				<text class="search">{{item.searches}}</text>
+			</view>
+		</view>
+		<view class="content" wx:if="{{item.content.data.length}}">
+			<image wx:if="{{item.content.data[0].image}}" src="{{item.content.data[0].image}}"></image>
+			<text class="content_title">{{item.content.data[0].title}}</text>
+			<text class="description">{{item.content.data[0].description}}</text>
+		</view>
+	</view>
+</view>

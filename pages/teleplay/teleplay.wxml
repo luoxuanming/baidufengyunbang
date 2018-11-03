@@ -1,0 +1,35 @@
+<view class="nav">
+	<text class="{{item.boardid==bid?'item-nav active':'item-nav'}}" 
+		wx:for="{{nav}}" wx:key="{{index}}" data-bid="{{item.boardid}}" bindtap="navtapFn">{{item.boardname}}</text>
+</view>
+
+<view class="list">
+	<view class="item-list" wx:for="{{list}}" wx:key="{{index}}" bindtap="tapwordFn" data-keyword="{{item.keyword}}">
+		<view class="title">
+			<text class="{{index==0?'index first':'index'}}" data-index="{{index+1}}" wx:if="{{index==0}}">{{index+1}}</text>
+			<text class="{{index==1?'index second':'index'}}" data-index="{{index+1}}" wx:if="{{index==1}}">{{index+1}}</text>
+			<text class="{{index==2?'index third':'index'}}" data-index="{{index+1}}" wx:if="{{index==2}}">{{index+1}}</text>
+			<text class="{{index>2?'index':''}}" wx:if="{{index>2}}">{{index+1}}</text>
+			
+			<text class="title_text">{{item.keyword}}</text>
+			<view class="count">
+				<image  data-trend="{{item.trend}}" src="/images/icon/{{item.trend=='rise'?'up.png':'fall.png'}}"></image>
+				<text class="search">{{item.searches}}</text>
+			</view>
+		</view>
+		<view class="content">
+			<view class="left">
+				<image src="{{item.image}}"></image>
+				<!--<text wx:if="{{item.score}}">豆瓣{{item.score/10}}分</text>-->
+			</view>
+			<view class="right">
+				<view wx:if="{{item.upto}}" class="director"><text class="dt">更新至：</text><text class="dd">{{item.upto}}集</text></view>
+				<view wx:if="{{item.area}}" class="director"><text class="dt">地区：</text><text class="dd">{{item.area[0]}}</text></view>
+				<view wx:if="{{item.director}}" class="actors"><text class="dt">主演：</text ><text class="dd">{{item.actors[0]}}  {{item.actors[1]}}  {{item.actors[2]}}</text></view>
+				<view wx:if="{{item.type}}" class="area"><text class="dt">类型：</text><text class="dd">{{item.type[0]}} {{item.type[1]}} {{item.type[2]}} {{item.type[3]}}</text></view>
+<!--				<text class="data" wx:if="{{item.data}}">{{item.data.abstract}}</text>
+-->				<button wx:if="{{item.playlink}}" data-playLink="{{item.playlink}}" catchtap="playertapFn">播放</button>
+			</view>
+		</view>
+	</view>
+</view>

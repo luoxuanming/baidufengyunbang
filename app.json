@@ -1,0 +1,50 @@
+{
+  "pages": [
+  
+  "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/movie/movie",
+    "pages/teleplay/teleplay",
+    "pages/variety/variety",
+    "pages/index/hotlink/hotlink"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFA500",
+    "navigationBarTitleText": "小骡子风云榜",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/icon/home_sel.png",
+        "selectedIconPath": "/images/icon/home.png"
+      },
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影",
+        "iconPath": "/images/icon/movie.png",
+        "selectedIconPath": "/images/icon/movie_sel.png"
+      },
+      {
+        "pagePath": "pages/teleplay/teleplay",
+        "text": "电视剧",
+        "iconPath": "/images/icon/teleplay.png",
+        "selectedIconPath": "/images/icon/teleplay_sel.png"
+      },
+      {
+        "pagePath": "pages/variety/variety",
+        "text": "综艺",
+        "iconPath": "/images/icon/variety.png",
+        "selectedIconPath": "/images/icon/variety_sel.png"
+      }
+    ],
+    "color": "#666",
+    "selectedColor": "#FFA500",
+    "backgroundColor": "#fff",
+    "borderStyle": "#d8d8d8"
+  }
+}
